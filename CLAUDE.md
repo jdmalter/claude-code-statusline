@@ -5,7 +5,7 @@ A single bash script, `statusline-command.sh`, that renders a three-line Claude 
 ## Environment
 
 - Runs in Git Bash on Windows. Keep it working there first; don't rely on GNU-only tools or Linux paths.
-- The installed copy lives at `~/.claude/statusline-command.sh`. This repo is the source. After changing the script here, copy it there to see it live: `cp statusline-command.sh ~/.claude/`.
+- Claude Code runs the script straight from this repo (`~/.claude/settings.json` points `statusLine.command` at `bash ~/IdeaProjects/claude-code-statusline/statusline-command.sh`), so a change here shows up live on the next refresh. There's no separate installed copy to keep in sync. A broken script breaks the live status line immediately, so run the tests before leaving it in a broken state.
 - `.gitattributes` keeps `*.sh` as LF. Bash fails on CRLF, so don't change that.
 
 ## Rules for the script
