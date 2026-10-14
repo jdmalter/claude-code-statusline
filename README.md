@@ -53,6 +53,14 @@ The session name goes last on line 1 because it only appears once the session ha
 
 The script reads every field with a single `jq` call and does the rest in plain bash without starting other processes, so each refresh takes about 0.1 s on Windows.
 
+## Tests
+
+```bash
+bash tests/run.sh
+```
+
+The tests pipe sample session JSON into the script and check its exact output, including missing fields, invalid input, bar rounding, colors, number formatting, reset countdowns, and speed. They need only bash and jq.
+
 ## Rebuild it from a description
 
 > A three-line Claude Code status line in muted 256-color text, with sections separated by four spaces and each section starting with an emoji. Line 1: 📁 the folder name (bold teal), 🤖 the model (steel blue) followed by the effort level (khaki), then 💬 the session name (mauve) last, shown only once the session has a name. Line 2: 🧠 a 10-cell context bar using █ and ░ with a sage-to-tan-to-brick-red gradient, the percentage, and "(used/total tok)" in dim text; then 💰 the cost as $0.00; then 📝 +lines added (green) and −lines removed (red). Line 3: ⏳ the 5-hour limit and 📅 the 7-day limit, each with the same kind of bar, a percentage and the dim time until it resets ("1h 5m" or "3d 23h"). Percentages are green under 50%, tan from 50% to 79% and red at 80% and above. Missing values show an empty grey bar and "--".
